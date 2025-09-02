@@ -1,3 +1,10 @@
+ # Configure the Google Cloud provider
+    provider "google" {
+      project = "proud-climber-469712-j0" # Replace with your GCP project ID
+      region  = "us-central1"        # Choose your desired region
+      credentials = ${{ secrets.GCP_SA_KEY}}
+      
+    }
 resource "google_compute_instance" "default" {
   name         = "my-vm"
   machine_type = "n1-standard-1"

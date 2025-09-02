@@ -1,7 +1,9 @@
 # Configure the Google Cloud provider
 provider "google" {
-  project = "proud-climber-469712-j0" # Replace with your GCP project ID
-  region  = "us-central1"             # Choose your desired region
+  project     = "proud-climber-469712-j0" # Replace with your GCP project ID
+  region      = "us-central1"             # Choose your desired region
+  credentials = ".github/workflows/terraform.yml"
+
 }
 resource "google_compute_instance" "default" {
   name         = "my-vm"

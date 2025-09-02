@@ -13,6 +13,7 @@ resource "google_compute_instance" "default" {
       image = "ubuntu-minimal-2210-kinetic-amd64-v20230126"
     }
   }
+
   network_interface {
     network = "default"
     access_config {}

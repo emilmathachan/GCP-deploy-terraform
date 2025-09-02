@@ -1,16 +1,11 @@
-resource "google_compute_instance" "default" {
-  name         = "my-vm"
-  machine_type = "n1-standard-1"
-  zone         = "us-central1-a"
-
-  boot_disk {
-    initialize_params {
-      image = "ubuntu-minimal-2210-kinetic-amd64-v20230126"
-    }
-  }
-
-  network_interface {
-    network = "default"
-    access_config {}
-  }
+provider "google" {
+  project     = "proud-climber-469712-j0"
+  region      = "us-central1"
+  credentials = ".github/workflows/terraform.yml"
+}
+resource "google_storage_bucket" "static" {
+  name          = "test_bucket"
+  location      = "US"
+  storage_class = "STANDARD"
+  uniform_bucket_level_access = true
 }
